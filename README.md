@@ -1,7 +1,7 @@
 # Introduction
 This is a custom component  that enables communication with a Ziggo Mediabox Next.
 
-![Example of using the Mediabox Next](https://github.com/IIStevowII/ziggo-mediabox-next/blob/master/screenshot.png)
+![Example of using the Mediabox Next](https://raw.githubusercontent.com/IIStevowII/ziggo-mediabox-next/master/screenshot.PNG)
 
 # Installation
 During early development it is only possible to install this component manually.
