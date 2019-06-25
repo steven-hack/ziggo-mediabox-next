@@ -16,18 +16,16 @@ def get_channels():
 
     r = requests.get(API_URL_CHANNELS)
 
-    _LOGGER.info("- Result body: " + str(r.content)) # TODO : fix this
-
     if (r.status_code == 200):
         content = r.json()
 
-        #_LOGGER.info("Retrieved channels: " + str(content))
+        _LOGGER.debug("Retrieved channels: " + str(content))
 
         return content['channels']
     else:
         _LOGGER.error("Error retrieving channels: " + str(r.status_code))
         _LOGGER.error("- Result headers: " + str(r.headers))
-        _LOGGER.error("- Result body: " + str(r.content)) # TODO : fix this
+        _LOGGER.error("- Result body: " + str(r.content))
 
         return ""
 
@@ -44,13 +42,13 @@ def get_session(username, password):
     if (r.status_code == 200):
         session = r.json()
 
-        #_LOGGER.info("Retrieved session: " + str(session))
+        _LOGGER.debug("Retrieved session: " + str(session))
 
         return session
     else:
         _LOGGER.error("Error retrieving session: " + str(r.status_code))
         _LOGGER.error("- Result headers: " + str(r.headers))
-        _LOGGER.error("- Result body: " + str(r.content)) # TODO : fix this
+        _LOGGER.error("- Result body: " + str(r.content))
 
         return ""
 
@@ -67,12 +65,12 @@ def get_jwt_token(sessionToken, username):
     if (r.status_code == 200):
         jwtToken = r.json()
 
-        #_LOGGER.info("Retrieved JWT token: " + str(jwtToken))
+        _LOGGER.debug("Retrieved JWT token: " + str(jwtToken))
 
         return jwtToken
     else:
         _LOGGER.error("Error retrieving JWT token: " + str(r.status_code))
         _LOGGER.error("- Result headers: " + str(r.headers))
-        _LOGGER.error("- Result body: " + str(r.content)) # TODO : fix this
+        _LOGGER.error("- Result body: " + str(r.content))
 
         return ""
