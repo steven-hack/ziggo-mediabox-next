@@ -1,5 +1,5 @@
 # Introduction
-This is a custom component  that enables communication with a Ziggo Mediabox Next.
+This is a custom component  that enables communication with a Ziggo Mediabox Next within Home Assistant.
 
 ![Example of using the Mediabox Next](https://raw.githubusercontent.com/IIStevowII/ziggo-mediabox-next/master/screenshot.PNG)
 
