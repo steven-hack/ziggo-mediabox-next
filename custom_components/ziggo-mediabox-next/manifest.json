@@ -1,0 +1,8 @@
+{
+    "domain": "mediabox-next",
+    "name": "Mediabox Next",
+    "documentation": "https://github.com/IIStevowII/mediabox-next/blob/master/README.md",
+    "codeowners": ["@IIStevowII"],
+    "dependencies": [],
+    "requirements": ["paho-mqtt==1.4.0", "requests==2.22.0"]
+  }

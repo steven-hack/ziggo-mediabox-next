@@ -1,0 +1,32 @@
+# Hide sublime text stuff
+*.sublime-project
+*.sublime-workspace
+
+# Hide some OS X stuff
+.DS_Store
+.AppleDouble
+.LSOverride
+Icon
+
+# pytest
+.pytest_cache
+.cache
+
+# GITHUB Proposed Python stuff:
+*.py[cod]
+
+# Logs
+*.log
+pip-log.txt
+
+# Visual Studio Code
+.vscode
+
+# Windows Explorer
+desktop.ini
+/home-assistant.pyproj
+/home-assistant.sln
+/.vs/*
+
+# mypy
+/.mypy_cache/*
