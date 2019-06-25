@@ -1,7 +1,7 @@
 {
-    "domain": "mediabox-next",
-    "name": "Mediabox Next",
-    "documentation": "https://github.com/IIStevowII/mediabox-next/blob/master/README.md",
+    "domain": "ziggo-mediabox-next",
+    "name": "Ziggo Mediabox Next",
+    "documentation": "https://github.com/IIStevowII/ziggo-mediabox-next/blob/master/README.md",
     "codeowners": ["@IIStevowII"],
     "dependencies": [],
     "requirements": ["paho-mqtt==1.4.0", "requests==2.22.0"]

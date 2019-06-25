@@ -9,7 +9,7 @@ During early development it is only possible to install this component manually.
 ## Manual installation
 1) Download the content of this repository
 
-2) Place the directory "mediabox-next" in the "custom_components" directory of your Home Assistant installation.
+2) Place the directory "ziggo-mediabox-next" in the "custom_components" directory of your Home Assistant installation.
 
 3) A restart of Home Assistant is required before the component will work.
 
@@ -17,7 +17,7 @@ During early development it is only possible to install this component manually.
 Inside your configuration.yaml add the following lines:
 ```yaml
 media_player:
-  - platform: mediabox-next
+  - platform: ziggo-mediabox-next
     username: !secret ziggo_username
     password: !secret ziggo_password
 ```
