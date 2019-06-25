@@ -32,11 +32,10 @@ class MqttClient():
 
         self._client = mqtt.Client(client_id = clientId, transport = "websockets")
 
-        # Set credentials and user data.
-        self._set_credentials()
+        # Set the credentials and save the user data
         self._client.user_data_set({
             'clientId': clientId,
-            'username': username
+            'householdId': self._set_credentials()
         })
 
         # Set additional configuration.
@@ -118,6 +117,8 @@ class MqttClient():
         # Update the client with the correct credentials
         self._client.username_pw_set(session['customer']['householdId'], jwtToken['token'])
 
+        return session['customer']['householdId']
+
 
     def __on_connect(self, client, userdata, flags, resultCode):
         _LOGGER.info("Connected with result code " + str(resultCode))
@@ -128,17 +129,19 @@ class MqttClient():
             self._isConnected = True
 
             self._client.subscribe("$SYS") # Does this work?
-            self._client.subscribe(userdata['username']) # Shouldn't be needed because of the below
-            self._client.subscribe(userdata['username'] + "/#")
-            self._client.subscribe(userdata['username'] + "/$SYS") # Shouldn't be needed because of the above
-            self._client.subscribe(userdata['username'] + "/+/#") # Shouldn't be needed because of the above
-            self._client.subscribe(userdata['username'] + "/+/status") # Shouldn't be needed because of the above
-            self._client.subscribe(userdata['username'] + "/" + userdata['clientId']) # Shouldn't be needed because of the above
+            self._client.subscribe(userdata['householdId']) # Shouldn't be needed because of the below
+            self._client.subscribe(userdata['householdId'] + "/#")
+            self._client.subscribe(userdata['householdId'] + "/$SYS") # Shouldn't be needed because of the above
+            self._client.subscribe(userdata['householdId'] + "/+/#") # Shouldn't be needed because of the above
+            self._client.subscribe(userdata['householdId'] + "/+/status") # Shouldn't be needed because of the above
+            self._client.subscribe(userdata['householdId'] + "/" + userdata['clientId']) # Shouldn't be needed because of the above
+
         elif (resultCode == 5):
             # Connection refused - not authorised.
             # This can occur if the current connection expires, so refresh the credentials and try again.
             self._set_credentials()
             self.start()
+
         else:
             _LOGGER.error("Could not establish a MQTT connection with the device.")
 
@@ -153,7 +156,7 @@ class MqttClient():
         if (payload['deviceType'] == 'STB'):
             # If this is the first time we receive a message, register additional subscriptions.
             if (self._topic == None):
-                self._topic = userdata['username'] + "/" + payload['source']
+                self._topic = userdata['householdId'] + "/" + payload['source']
 
                 self._client.subscribe(self._topic) # Shouldn't be needed because of the below
                 self._client.subscribe(self._topic + "/#")

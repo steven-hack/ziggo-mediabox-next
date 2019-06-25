@@ -157,7 +157,6 @@ class MediaboxNext(MediaPlayerDevice):
         if (self._client.is_connected == False):
             self._client.start()
 
-
         # Certain updates are only needed when the device is activated.
         if (self._state == STATE_ON):
             # Refresh the channel information.
