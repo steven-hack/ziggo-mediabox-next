@@ -6,7 +6,7 @@ import voluptuous as vol
 import homeassistant.helpers.config_validation as cv
 
 from homeassistant.const import CONF_NAME, CONF_HOST, CONF_PORT, CONF_USERNAME, CONF_PASSWORD
-from homeassistant.components.media_player import (PLATFORM_SCHEMA, MEDIA_PLAYER_SCHEMA)
+from homeassistant.components.media_player import (PLATFORM_SCHEMA)
 
 from .mediabox_next import MediaboxNext
 
