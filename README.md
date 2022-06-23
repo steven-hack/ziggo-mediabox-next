@@ -55,3 +55,7 @@ This entire component is based on a proof of concept published here: https://git
 Ziggo Mediabox XL used for certain development choices: https://github.com/b10m/ziggo_mediabox_xl/
 
 And ofcourse various other (media player) components which I've used as a reference guide.
+
+---
+
+<a href="https://www.buymeacoffee.com/IIStevowII" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png" alt="Buy Me A Coffee" style="height: 60px !important;width: 217px !important;" ></a>
